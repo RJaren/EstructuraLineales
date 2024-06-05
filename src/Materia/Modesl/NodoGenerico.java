@@ -10,6 +10,10 @@ public class NodoGenerico<T> {
     ){
         this.data=data;
     }
+    public NodoGenerico(){
+        
+    }
+
 
     
 }

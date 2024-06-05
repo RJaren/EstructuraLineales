@@ -1,7 +1,8 @@
+import Materia.Colas.Cola;
+import Materia.Colas.ColaGenerica;
 import Materia.Modesl.Pantalla;
 import Materia.PIlas.Pila;
 import Materia.PIlas.PilaGenerica;
-
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -28,6 +29,49 @@ public class App {
         System.out.println("Destruir pantalla:\n\t "+ pilaPantallas.pop().getNombre());
         pilaPantallas.Push(new Pantalla("User Page", "/Home/Menu/User"));
         System.out.println("Estoy en la pantalla:\n\t " + pilaPantallas.peek().getNombre());
+        
+
+        Cola queue = new Cola();
+
+        queue.addNode(10);
+        queue.addNode(20);
+        queue.addNode(30);
+
+
+        System.out.println("Elemento en el frente: "+ queue.peek());//10
+        
+
+        //Retirar elemento de la cola
+        System.out.println("Elemento retirado: "+ queue.remove());//10
+        System.out.println("Elemento en el frente: "+ queue.peek());//20
+        
+        System.out.println("Elmento retirado: "+ queue.remove());//20
+        System.out.println("Elmento en el frente: "+ queue.peek());//30
+
+        //Verificar si la pila está vacía
+        System.out.println("¿Cola vacía?: "+ (queue.isEmpty() ? "Si" : "No")); //False
+
+        //ColaGenrica
+        ColaGenerica<Pantalla> queueGeneric = new ColaGenerica<>();
+        queueGeneric.addNode(new Pantalla("Home Page", "/Home"));
+        queueGeneric.addNode(new Pantalla("Menu Page", "/Home /Menu"));
+        queueGeneric.addNode(new Pantalla("Settings", "/Home/Menu/Settings"));
+        System.out.println("La cola tiene "+ queueGeneric.size()+" elementos");
+        System.out.println("Estoy en la pantalla\t"+
+                        queueGeneric.peek().getNombre());
+        System.out.println("Pantalla Destruida\t"+
+                        queueGeneric.remove().getNombre());
+        queueGeneric.addNode(new Pantalla("User Page", "/Home/Menu/User"));
+        System.out.println("Estoy en la pantalla\t"+
+                        queueGeneric.peek().getNombre());
+        System.out.println("Pantalla Destruida\t" +
+                        queueGeneric.remove().getNombre());
+        System.out.println("Pantalla Destruida\t"+
+                        queueGeneric.remove().getNombre());
+        System.out.println("Estoy en la pantalla\t"+
+                        queueGeneric.peek().getNombre());;
+
+        System.out.println("La cola tiene "+ queueGeneric.size()+" Elementos");
     }
 
 }
