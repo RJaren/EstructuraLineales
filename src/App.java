@@ -1,3 +1,6 @@
+import javax.xml.validation.Validator;
+
+import Ejercicio_01_sign.SignValidator;
 import Materia.Colas.Cola;
 import Materia.Colas.ColaGenerica;
 import Materia.Modesl.Pantalla;
@@ -72,6 +75,11 @@ public class App {
                         queueGeneric.peek().getNombre());;
 
         System.out.println("La cola tiene "+ queueGeneric.size()+" Elementos");
+        System.out.println("");
+
+        //SingValidator
+        SignValidator validator = new SignValidator();
+        System.out.println(validator.isValid("()"));
     }
 
 }
