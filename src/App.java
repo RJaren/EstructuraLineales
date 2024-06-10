@@ -1,8 +1,12 @@
+import java.util.Stack;
+
 import javax.xml.validation.Validator;
 
 import Ejercicio_01_sign.SignValidator;
+import Ejercicio_02_sorting.StackSorte;
 import Materia.Colas.Cola;
 import Materia.Colas.ColaGenerica;
+import Materia.ListasEnlazadas.ListaEnlazada;
 import Materia.Modesl.Pantalla;
 import Materia.PIlas.Pila;
 import Materia.PIlas.PilaGenerica;
@@ -80,6 +84,39 @@ public class App {
         //SingValidator
         SignValidator validator = new SignValidator();
         System.out.println(validator.isValid("()"));
+        
+
+        StackSorte sorte = new StackSorte();
+        Stack<Integer> stack = new Stack<>();
+        
+        stack.push(5);
+        stack.push(1);
+        stack.push(4);
+        stack.push(2);
+        
+        System.out.println("Stack: " + stack);
+        
+        sorte.sortStack(stack);
+        
+        System.out.println("Stack ordenado: " + stack);
+    
+    
+    
+    
+    
+    
+    
+        ListaEnlazada lista = new ListaEnlazada();
+        lista.addNode(1);
+        lista.addNode(4);
+        lista.addNode(3);
+        lista.addNode(6);
+        lista.print();
+        lista.deleteNode(1);
+        lista.print();
+        lista.deleteNode(3);
+        lista.print();
     }
+
 
 }
