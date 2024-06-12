@@ -4,6 +4,7 @@ import javax.xml.validation.Validator;
 
 import Ejercicio_01_sign.SignValidator;
 import Ejercicio_02_sorting.StackSorte;
+import Ejercicio_03_linkedLists.LinkedListEjr;
 import Materia.Colas.Cola;
 import Materia.Colas.ColaGenerica;
 import Materia.ListasEnlazadas.ListaEnlazada;
@@ -116,6 +117,18 @@ public class App {
         lista.print();
         lista.deleteNode(3);
         lista.print();
+    
+        ListaEnlazada linkedList = new ListaEnlazada();
+        linkedList.addNode(1);
+        linkedList.addNode(2);
+        linkedList.addNode(3);
+        linkedList.addNode(4);
+        linkedList.addNode(5);
+        linkedList.addNode(6);
+        linkedList.addNode(7);
+
+    
+        
     }
 
 
